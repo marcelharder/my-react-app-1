@@ -1,42 +1,42 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { Button, HStack } from "@chakra-ui/react";
+
+import { Field, Input, Button, HStack } from "@chakra-ui/react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const login = () => {};
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
-      <h1>Vite + React</h1>
+      <h1>Login</h1>
       <div className="card">
+        <Field.Root orientation={"horizontal"}>
+          <Field.Label>Username</Field.Label>
+          <Input placeholder="username" />
+        </Field.Root>
+
+        <Field.Root orientation={"horizontal"} paddingTop="3">
+          <Field.Label>Email</Field.Label>
+          <Input placeholder="me@example.com" />
+        </Field.Root>
+
+        <Field.Root orientation={"horizontal"} paddingTop="3">
+          <Field.Label>Password</Field.Label>
+          <Input type="password" />
+        </Field.Root>
+
         <HStack>
           <Button
-            onClick={() => setCount((count) => count + 1)}
+            onClick={login}
+            paddingTop="3"
             variant="subtle"
             rounded="md"
             colorPalette={"purple"}
           >
-            count is {count}
+            Save
           </Button>
         </HStack>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
